@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Metrophobic&display=swap" rel="stylesheet">   
+    <meta name="author" content="Michael Cirkl">
+    <meta name="description" content="Stránka ukazující layout v CSS">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout stránka</title>
+</head>
+<body>
+        <nav id="nav">
+            <div id="siteName"><a href="#">SuperTelefony.cz</a></div>
+            <div id="links">
+                    <div class="linksItem">Domů</div>
+                <div class="dropdown">
+                    <div class="linksItem">Produkty ></div>
+                    <div class="dropdownContent">
+                        <a href="#" class="dropLink">Nokia 3310</a>
+                        <a href="#" class="dropLink">Obrněný telefon</a>
+                        <a href="#" class="dropLink">iCihla</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <div class="linksItem">Ocenění ></div>
+                    <div class="dropdownContent">
+                        <a href="#" class="dropLink">Nejodolnější telefon</a>
+                        <a href="#" class="dropLink">Nejtěžší telefon</a>
+                        <a href="#" class="dropLink">Nejdrsnější telefon</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <div class="linksItem">Recenze ></div>
+                    <div class="dropdownContent">
+                        <a href="#" class="dropLink">Super - Strabag</a>
+                        <a href="#" class="dropLink">Nejlepší - OKD</a>
+                        <a href="#" class="dropLink">Nezničitelné - John Deere</a>
+                    </div>
+                </div>
+            </div>
+            <button class="buyButton"><a href="#">KOUPIT! →</a></button>
+            <div id="burgerContainer">
+                <img src="./burger.svg" alt="Burger menu" id="burger">
+            </div>
+        </nav>
+    <main id="main">
+        <section id="desc">
+            <div id="descContent">
+                <h1 id="header">Nejlepší telefon roku 2023</h1>
+                <p id="info">Kupte si tento krásný a odolný telefon, který vám vydrží 50 let! V našich testech přežil přejetí bagrem, jaderný výbuch i psychické týrání. To vše za cenu jen 999,- Kč.</p>
+                <button class="callToAction">KOUPIT! →</button>
+            </div>
+        </section>
+        <section id="imgSection">
+                <img src="./nokia.png" id="img" alt="Nokia 3310">
+        </section>
+    </main>
+</body>
+</html>
