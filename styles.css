@@ -76,10 +76,6 @@ a {
     box-shadow: 0 0 0 0.2rem rgb(0 186 248 / 50%);
 }
 
-#burgerContainer {
-    display: none; /*Burger je dropdown pro mobily a tablety*/
-}
-
 
 /*Dropdown Logika*/
 
@@ -126,6 +122,9 @@ a {
 
 #desc { /*Levá část mainu*/
     width: 70vw;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
 }
 
 #descContent {
@@ -136,7 +135,6 @@ a {
 #header {
     color:white;
     font-size: 3.5rem;
-    margin-top:20vh;
 }
 
 #info {
@@ -162,6 +160,16 @@ a {
     transition: 0.3s;
 }
 
+.callToAction:hover {
+    background-color: #009476;
+    border-color: #00876b;
+}
+
+.callToAction:focus {
+    border-color: #00ba94;
+    box-shadow: 0 0 0 0.2rem rgb(0 186 248 / 50%);
+}
+
 #imgSection {
     display: flex;
     align-items: center;
@@ -173,7 +181,7 @@ a {
     animation: drop 0.55s linear forwards;
 }
 
-@keyframes drop {/*Animace. Důvod toho -3px je to, aby to ještě vykočilo jak míček*/
+@keyframes drop {/*Animace telefonu. Důvod toho -3px je to, aby to ještě vykočilo jak míček*/
     0% {transform: translateY(-200px)}
     65% {transform: translateY(0px)}
     80% {transform: translateY(-3px)}
@@ -199,22 +207,12 @@ a {
 
 @media screen and (max-width: 900px) {
     #imgSection {
-        display: none;
+        display: none; /*Na mobilu neukazuje obrázek, protože by se tam nevešel*/
     }
     #desc {
-        width: 100vw;
-    }
-    #header {
-        margin-top: 150px;
+        width: 100vw; /*Text pak zabírá 100% šířky obrazovky*/
     }
 }
-
-@media screen and (max-width: 680px) {
-    #header {
-        margin-top: 100px;
-    }
-}
-
 
 
 @media screen and (max-width: 600px) {
@@ -222,15 +220,11 @@ a {
         margin-left: 10%;
         margin-right: 10%;
     }
-    #header {
-        margin-top: 20vh;
-    }
 }
 
 
 @media screen and (max-width: 500px) {
     #header {
-        margin-top: 10vh;
         font-size: 2.8rem;
     }
     #info {
@@ -238,31 +232,62 @@ a {
     }
 }
 
-@media screen and (max-width: 320px) {
+
+@media screen and (max-height: 600px) {
+    #descContent {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}
+
+@media screen and (max-height: 450px) {
     #header {
-        margin-top: 5vh;
+        font-size: 3rem;
+    }
+    #info {
+        margin-bottom: 20px;
     }
 }
 
 
-/*Sekce zaručující responsivitu navigace, burger menu*/
+/*Sekce zaručující responsivitu navigace*/
 
 @media screen and (max-width: 900px) {
-    .buyButton, #links {
+    #siteName {
+        font-size: 1.2rem;
+        margin-left:2vw;
+        margin-right: 0vw;
+    }
+    .buyButton {
+        margin-right: 5%;
+        margin-left:auto;
+    }
+}
+
+@media screen and (max-width: 780px) {
+   .linksItem {
+       padding-right: 10px;
+       padding-left: 10px;
+       font-size: 1rem;
+   }
+   #links {
+       margin-left:20px;
+   }
+}
+
+@media screen and (max-width: 700px) {
+    #home, .buyButton {
+        display: none; /*Tlačítko Home je nadbytečné, tak ho tam nedám když není místo. V reálné situaci bych na mobilu použil burger menu.*/
+    }
+}
+
+@media screen and (max-width: 470px) {
+    #siteName {
         display: none;
     }
-    #burger {
-        height: 30px;
-        cursor: pointer;
-    }
-    #burgerContainer {
-        position: relative;
-        display: inline-block;
-        margin-right:50px;
-    }
-    #nav {
+    #links {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
+        justify-content: center;
+        width: 100vw;
     }
 }
